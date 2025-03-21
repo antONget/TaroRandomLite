@@ -175,7 +175,7 @@ async def add_token(data: dict) -> None:
         await session.commit()
 
 
-async def get_token(token: str, tg_id: int) -> bool | str:
+async def get_token(token: str, tg_id: int):
     """
     Проверка валидности токена
     :param token:
