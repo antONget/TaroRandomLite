@@ -53,6 +53,17 @@ async def get_user_id(id_: int) -> User:
         return await session.scalar(select(User).where(User.id == id_))
 
 
+async def get_users() -> list[User]:
+    """
+    Получение информации о пользователях
+    :return:
+    """
+    logging.info(f'get_users')
+    async with async_session() as session:
+        users = await session.scalars(select(User))
+        return [user for user in users]
+
+
 async def set_user_role(tg_id: int, role: str) -> None:
     """
     Обновление роли пользователя
