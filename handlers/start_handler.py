@@ -90,6 +90,6 @@ async def process_load_card(message: Message, state: FSMContext, bot: Bot) -> No
             random_card: Card = random.choice(list_cards)
             await message.answer_photo(photo=random_card.photo_id,
                                        caption=random_card.description)
-            await message.delete()
+            # await message.delete()
     else:
         await message.answer(text='Для доступа к функционалу бота, пришлите кодовое слово.')
