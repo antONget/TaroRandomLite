@@ -9,5 +9,5 @@ async def check_groups(message: Message):
 
 
 class IsGroup(BaseFilter):
-    async def __call__(self, message: Message) -> bool | None:
+    async def __call__(self, message: Message):
         return await check_groups(message=message)

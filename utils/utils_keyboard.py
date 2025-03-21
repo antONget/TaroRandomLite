@@ -45,8 +45,8 @@ async def utils_handler_pagination_and_select_item(list_items: list,
                                                    callback_prefix_select: str,
                                                    callback_prefix_back: str,
                                                    callback_prefix_next: str,
-                                                   callback: CallbackQuery | None,
-                                                   message: Message | None) -> None:
+                                                   callback: CallbackQuery,
+                                                   message: Message) -> None:
     logging.info(f'utils_keyboard_pagination_and_select_item')
     part = 0
     if len(list_items) % count_item_page:
@@ -115,8 +115,8 @@ async def utils_handler_pagination_one_card_photo_or_only_text_without_select(li
                                                                               page: int,
                                                                               callback_prefix_back: str,
                                                                               callback_prefix_next: str,
-                                                                              callback: CallbackQuery | None,
-                                                                              message: Message | None) -> None:
+                                                                              callback: CallbackQuery,
+                                                                              message: Message) -> None:
     logging.info(f'utils_handler_pagination_one_card')
     max_page = len(list_items)
     if message:
@@ -218,8 +218,8 @@ async def utils_handler_pagination_one_card_photo_or_only_text(list_items: list,
                                                                callback_prefix_select: str,
                                                                callback_prefix_back: str,
                                                                callback_prefix_next: str,
-                                                               callback: CallbackQuery | None,
-                                                               message: Message | None) -> None:
+                                                               callback: CallbackQuery,
+                                                               message: Message) -> None:
     """
     Функция показывает по одной карточке из списка с фото+текст или только текст и кнопки пагинации с выбором карточки
     :param list_items:
