@@ -53,7 +53,7 @@ async def get_user_id(id_: int) -> User:
         return await session.scalar(select(User).where(User.id == id_))
 
 
-async def get_users() -> list[User]:
+async def get_users() -> list:
     """
     Получение информации о пользователях
     :return:
